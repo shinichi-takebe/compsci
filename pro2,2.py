@@ -297,18 +297,24 @@ class PSGame:
 
         self.deal_hole_cards()
 
+    def next_game(self):
+        self.reset_game()
+        self.play()
+
+
     def update_score(self, points):
         self.score += points
         self.num_games += 1
         self.score_text.setText(f"Score: {self.score}")
         self.average_score_text.setText(f"Average Score: {self.score / self.num_games:.2f}")
+
 def main():
     win = GraphWin("Poker Solitaire", 600, 400)
     win.setCoords(0, 0, 600, 400)
     game = PSGame(win)
     game.play()
-    win.getMouse()
-    win.close()
+    win.closeOnClick()
+
 
 if __name__ == '__main__':
     main()
