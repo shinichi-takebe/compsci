@@ -206,8 +206,8 @@ class PSGame:
         self.play()
 
 if __name__ == "__main__":
-    try:
-        game = PSGame()
-        game.run()
-    except Exception as e:
-        print("An error occurred:", e)
+    win = GraphWin("Poker Solitaire", 400, 400)
+    game = PSGame(win)
+    game.run()
+
+
